@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pontano+Sans&display=swap');
+
+:root {
+    --primary-color: #f2f5f7;
+    --secondary-color: #397ef6;
+    --heading-color: #354155;
+    --para-color: #c5c6cb;
+    --head-font: 'Poppins', sans-serif;
+    --para-font: 'Pontano Sans', sans-serif;
+}
+
+body {
+    background: var(--primary-color);
+}
+
+.left-details {
+    height: auto;
+    width: 100%;
+    padding: 5px;
+    margin-top: 6rem;
+
+}
+
+h3 {
+    color: var(--heading-color);
+    font-family: var(--head-font);
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+
+p {
+    color: var(--para-color);
+    font-family: var(--para-font);
+   
+
+}
+
+.signup-image{
+    height: 100% !important;
+    width: 100% !important;
+}
+a {
+    cursor: pointer;
+    text-decoration: none !important;
+    
+}
+.right-form-details {
+    height: auto;
+    width: 100%;
+    background-color: #ffff;
+    padding: 30px 15px 15px 15px;
+    margin-top: 4rem;
+    border-radius: 10px;
+
+}
+.signup-form {
+    color: var(--secondary-color);
+    font-weight: bold !important;
+     font-family: var(--para-font);
+}

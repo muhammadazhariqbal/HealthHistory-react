@@ -1,0 +1,21 @@
+.my-navigations {
+    background-color: #f2f5f7 !important;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    
+    
+}
+.nav-link {
+    color: #c5c6cb;
+
+}
+.navbar-brand {
+    color: #397ef6;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+.color-style {
+    color: #354155 !important;
+    font-weight: bold;
+}

@@ -1,0 +1,56 @@
+@media screen and (max-width:767px){
+    .nav-icons-container{
+        display: flex;
+        flex-direction: row;
+    }
+}
+@media screen and (max-width:890px){
+    .logo h3{
+         font-size: 0.9rem; 
+        
+    }
+    .dashboard-details h2 {
+        font-size: 1.5rem;
+    }
+    .dashboard-header h5{
+        font-size: 1rem;
+    }
+    .btn {
+       font-size: 0.8rem;
+    
+    }
+    .side-details h3 {
+        margin-top: 1rem;
+        font-size: 1rem;
+    }
+    .side-details h4 {
+        font-size: 0.9rem;
+    }
+    .side-details h1 {
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width:768px){
+    .dashboard-header img {
+        display: none;
+    }
+    .side-details  {
+    flex-direction:row;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    }
+    .side-details h3 {
+        display: none;
+    }
+    .allusers-list {
+        font-size: small;
+    } 
+
+}
+@media screen and (max-width:380px){
+    
+    .allusers-list {
+        font-size: 0.1;
+    } 
+}
