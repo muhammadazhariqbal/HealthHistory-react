@@ -1,0 +1,31 @@
+.loader-container {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+   
+}
+.loader-icon {
+    display: flex;
+    justify-content: center;
+    height: 70%;
+    width: 70%;
+    margin: auto;
+    font-size: 1.5rem;
+    color:#397ef6;
+    animation-name: load;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+@keyframes load {
+    
+    50%{
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    100%{
+      
+
+        opacity:9
+    }
+}

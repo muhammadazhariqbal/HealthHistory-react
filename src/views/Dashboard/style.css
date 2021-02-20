@@ -59,7 +59,12 @@ html,body{height: 100vh;}
     color: #9e9ea0;
    
 }
+.nav-btn:hover{
+    background-color: var(--secondary-color);
+    transition: .4s;
+    color: #fff;
 
+}
 .active {
     background-color: var(--secondary-color) !important;
     border: none;
@@ -157,10 +162,17 @@ html,body{height: 100vh;}
     font-family: var(--head-font);
     margin: auto;
     margin-top: 1rem;
-    text-align: center;
+    text-align: left;
     overflow-y: scroll;
+    
    
  
+}
+.loading {
+    font-family: var(--head-font);
+    color: #397ef6;
+    font-size: small;
+    
 }
 
 

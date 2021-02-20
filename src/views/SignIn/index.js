@@ -1,10 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import MineNavigationBar from '../../Components/Navigation'
 import SignInIcon from '../../assets/signIn-icon.png'
 import Button from '../../Components/Button'
+import Loader from '../../Components/Loader'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import { Container, Row, Col, Form, FormGroup, Label, Input, } from 'reactstrap'
+import { Container, Row, Col, Form, FormGroup, Label, Input, Alert} from 'reactstrap'
 import {signIn} from '../../Config/firebaseConfig'
 import './style.css'
 const SignIn = (props) => {
@@ -17,16 +19,27 @@ const SignIn = (props) => {
     const getEmail = (e) => { setEmail(e.target.value) }
     // getting and setting password
     const getPassword = (e) => { setPassword(e.target.value) }
-    // toggling page
-    
+     // state for showing error message 
+     
+     const [showErrorMsg, setShowErrorMsg] =useState()
+    const history=useHistory()
+    // showing loading aniamtion 
+    const [loading, setLoading] = useState(false)
     // getting user
     const SignInUser = (e) => {
+        setLoading(true)
         e.preventDefault()
         signIn(email,password)
         .then(response=>{
-            props.navigation('dashboard')
-            console.log("welcome to dashboard")})
-        .catch(error=>{console.log(error.message)})
+            setLoading(false)
+            console.log("welcome to dashboard")
+            history.push('/dashboard')
+        })
+        .catch(error=>{
+            setLoading(false)
+            setShowErrorMsg(error.message)
+            console.log(error.message)
+        })
     }
     
 
@@ -45,23 +58,18 @@ const SignIn = (props) => {
                     <div className="right-form-details">
                         <p>START FOR FREE</p>
                         <h3>Sign in to MedHistory.</h3>
-                        <p>New User? <a className="login-linked" onClick={()=>{
-                            props.navigation('signup')
-                        }}>Sign up now</a></p>
+                        <p>New User? <a className="login-linked" onClick={()=>{history.push('/signUp')}}>Sign up now</a></p>
                         <Form className="signIn-form" onSubmit={SignInUser}>
+                        {showErrorMsg && <Alert color="danger">{showErrorMsg}</Alert>}
                             <FormGroup>
-                                <Label>Email</Label> <Input type="mail" name="email" placeholder=" Your Email" onChange={getEmail} />
-                               
-                                <Label>Password</Label><Input type="password" name="password" placeholder="Your Password" onChange={getPassword} />
                                 
-                            </FormGroup>
-                            
-
-                           
-
-                            <FormGroup><Button name="Sign In" type="submit" /></FormGroup>
-
-                        </Form>
+                                <Label>Email</Label> <Input type="mail" name="email" placeholder=" Your Email" onChange={getEmail} />
+                                <Label>Password</Label><Input type="password" name="password" placeholder="Your Password" onChange={getPassword} />
+                             </FormGroup>
+                             <FormGroup>
+                                 {loading ? <Loader/> : <Button name="Sign In" type="submit" />}
+                                 </FormGroup>
+                         </Form>
                     </div>
                 </Col>
 
