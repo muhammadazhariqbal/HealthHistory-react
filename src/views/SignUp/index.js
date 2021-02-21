@@ -73,6 +73,7 @@ const SignUp = (props) => {
                 setShowSuccessMsg(true)
                 setLoading(true)
                 console.log("user registered!")
+                setLoading(false)
                 saveData(fullName,healthStatus,diseaseName)
                 .then(response=>{})
                 .catch(error=>{
@@ -115,7 +116,7 @@ const SignUp = (props) => {
                     <div className="right-form-details">
                         <p>START FOR FREE</p>
                         <h3>Sign up to MedHistory.</h3>
-                        <p>Already Member? <a className="login-linked" onClick={()=>{history.push('/signIn')}} >Login</a></p>
+                        <p>Already Member? <a className="login-linked" onClick={()=>{history.push('/')}} >Login</a></p>
                         <Form className="signup-form" onSubmit={registerUser}>
                             {showSuccessMsg ?
                              <Alert color="success">Thanks for signing up.</Alert> : showErrorMsg && <Alert color="danger">{showErrorMsg}</Alert>}

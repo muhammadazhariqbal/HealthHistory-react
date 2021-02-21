@@ -38,7 +38,10 @@ const Dashboard = (props) => {
     // function for signing out current user 
     const signOutCurrentUser = () => {
         signOutUser()
-            .then(response => { history.push('/') })
+            .then(response => { 
+                
+                history.push('/') 
+                })
             .catch(error => { alert(error.message) })
     }
     // for getting No of Well users

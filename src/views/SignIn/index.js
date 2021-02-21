@@ -58,7 +58,7 @@ const SignIn = (props) => {
                     <div className="right-form-details">
                         <p>START FOR FREE</p>
                         <h3>Sign in to MedHistory.</h3>
-                        <p>New User? <a className="login-linked" onClick={()=>{history.push('/signUp')}}>Sign up now</a></p>
+                        <p>New User? <a className="login-linked" onClick={()=>{history.push('/signup')}}>Sign up now</a></p>
                         <Form className="signIn-form" onSubmit={SignInUser}>
                         {showErrorMsg && <Alert color="danger">{showErrorMsg}</Alert>}
                             <FormGroup>

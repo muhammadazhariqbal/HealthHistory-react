@@ -17,8 +17,8 @@ function App() {
 
   
   return <>
+  {user ? null : <MineNavigationBar /> }
   
-  <MineNavigationBar />
   <Navigation user={user} />
   
   </> 
