@@ -21,19 +21,7 @@ const MineNavigationBar = (props) => {
         <div className="my-navigations">
             <Navbar className="nav-link" expand="md">
                 <NavbarBrand className="navbar-brand" href="/">Med<span className="color-style">History.</span></NavbarBrand>
-                <NavbarToggler onClick={toggle}/>
-                <Collapse isOpen={isOpen} navbar>
-                    <Nav className="ml-auto" navbar>
-                        <NavItem>
-                            <NavLink  onClick={()=>{props.navigation('signin')}}>Sign in</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink  onClick={()=>{props.navigation('signup')}}>Sign up</NavLink>
-                        </NavItem>
-
-                    </Nav>
-
-                </Collapse>
+               
             </Navbar>
         </div>
 
