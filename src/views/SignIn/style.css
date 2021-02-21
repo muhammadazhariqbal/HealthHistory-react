@@ -51,7 +51,7 @@ p {
     border-radius: 10px;
 
 }
-.signup-form {
+.signIn-form {
     color: var(--secondary-color);
     font-weight: bold !important;
      font-family: var(--para-font);
