@@ -3,13 +3,14 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    Redirect
   } from "react-router-dom";
 import SignUp from '../views/SignUp' 
 import SignIn from '../views/SignIn' 
 import Dashboard from '../views/Dashboard' 
   
-  export default function Navigation() {
+  export default function Navigation({user}) {
     return (
       <Router>
         <div>
@@ -30,18 +31,28 @@ import Dashboard from '../views/Dashboard'
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
           <Switch>
-            <Route path="/signIn" exact>
-              <SignIn />
-            </Route>
+            <Route path="/" exact>
+              {authChecker(!user,<SignIn/>,'/dashboard')}
+              </Route>
            
             <Route path="/dashboard">
-              <Dashboard />
+            {authChecker(user,<Dashboard/>)}
+
+            
+
+             
             </Route>
-            <Route path="/">
-              <SignUp />
+            <Route path="/signup">
+            {authChecker(!user,<SignUp/>,'/dashboard')}
+
+             
             </Route>
           </Switch>
         </div>
       </Router>
     );
+  }
+
+  const authChecker = (user,component, path="/") =>{
+  return user ? component : <Redirect to={path} />
   }

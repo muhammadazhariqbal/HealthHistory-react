@@ -62,4 +62,4 @@ const gettingUserData = () =>{
     })
   })
 }
-export {register,signIn,saveData,onAuthStateCheck,signOutUser,gettingUserData}
+export {register,signIn,saveData,onAuthStateCheck,signOutUser,gettingUserData, auth}
